@@ -15,16 +15,18 @@ function create(model) {
         .then(result => result.insertedId.toString())
 };
 
-function update() { 
-    
+function update() {
+
 };
 
-function deleteEntry() {
-    
+function deleteEntry(id) {
+    let _id = new ObjectId(id)
+    return conn.db().collection('characters').deleteOne({ "_id": _id })
+        .then(result => Promise.resolve())
 };
 
 function readById() {
-    
+
 };
 
 function readAll() {
